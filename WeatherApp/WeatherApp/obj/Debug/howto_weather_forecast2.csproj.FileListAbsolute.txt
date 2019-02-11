@@ -1,0 +1,11 @@
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\bin\Debug\howto_weather_forecast2.exe
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\bin\Debug\howto_weather_forecast2.pdb
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\howto_weather_forecast2.csprojAssemblyReference.cache
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\howto_weather_forecast2.Properties.Resources.resources
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\howto_weather_forecast2.csproj.GenerateResource.cache
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\howto_weather_forecast2.csproj.CoreCompileInputs.cache
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\howto_weather_forecast2.exe
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\howto_weather_forecast2.pdb
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\obj\Debug\WeatherApp.WeatherForm.resources
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\bin\Debug\Database1.mdf
+C:\Users\glori\Downloads\howto_weather_forecast2\howto_weather_forecast2\bin\Debug\Database1_log.ldf
