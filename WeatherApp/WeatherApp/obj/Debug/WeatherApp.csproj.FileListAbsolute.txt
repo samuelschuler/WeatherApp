@@ -10,3 +10,15 @@ C:\Users\glori\source\repos\WeatherApp\WeatherApp\obj\Debug\WeatherApp.exe
 C:\Users\glori\source\repos\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb
 C:\Users\glori\source\repos\WeatherApp\WeatherApp\bin\Debug\WeatherData.mdf
 C:\Users\glori\source\repos\WeatherApp\WeatherApp\bin\Debug\WeatherData_log.ldf
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\bin\Debug\WeatherData.mdf
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\bin\Debug\WeatherData_log.ldf
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\bin\Debug\WeatherApp.exe.config
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\bin\Debug\WeatherApp.exe
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\bin\Debug\WeatherApp.pdb
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csprojAssemblyReference.cache
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.WeatherForm.resources
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.Properties.Resources.resources
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.GenerateResource.cache
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.exe
+C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb

@@ -56,6 +56,7 @@ namespace WeatherApp
         {
             DropDown.Items.Add("City");
             DropDown.Items.Add("ZIP");
+            DropDown.SelectedIndex = 1;
         }
         
         // Gets the forcast of city/zip.
@@ -101,7 +102,7 @@ namespace WeatherApp
 			string id = geo_node.Attributes["geobaseid"].Value;
 
 			// Add the infromation to the database.
-			con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\glori\source\repos\WeatherApp\WeatherApp\WeatherData.mdf;Integrated Security=True");
+			con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\WeatherData.mdf");
 			con.Open();
 			cmd = new SqlCommand("INSERT INTO WeatherData (City,ZipCode) Values (@City,@Zipcode)", con);
 			cmd.Parameters.AddWithValue("@City", city);
@@ -113,15 +114,40 @@ namespace WeatherApp
 			}
 			else
 			{
-				cmd.Parameters.AddWithValue("@ZipCode", "null");
+				cmd.Parameters.AddWithValue("@ZipCode", "NULL");
 			}
 			cmd.ExecuteNonQuery();
 
 
-			// Get the precipitation.
-			XmlNode precip_node = xml_doc.SelectSingleNode("//precipitation");
-			string precip = precip_node.Attributes["type"].Value;
-			txtWeather.Text = precip;
+            // Get the precipitation.
+            try
+            {
+                XmlNode precip_node = xml_doc.SelectSingleNode("//precipitation");
+                string precip = precip_node.Attributes["type"].Value;
+                precip = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(precip);
+                txtWeather.Text = precip;
+            }
+            catch(Exception ex)
+            {
+                txtWeather.Text = "Clear";
+            }
+
+
+            // Get Weather IconID
+            try
+            {
+                string urlweatherID = "http://openweathermap.org/img/w/@PICID@.png";
+                XmlNode weather_node = xml_doc.SelectSingleNode("//symbol");
+                string weatherID = weather_node.Attributes["var"].Value;
+                urlweatherID = urlweatherID.Replace("@PICID@", weatherID);
+                CurrentWeatherIcon.Load(urlweatherID);
+                CurrentWeatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            }
+            catch(Exception ex)
+            {
+
+            }
+
 			lvwForecast.Items.Clear();
 			char degrees = (char)176;
 			
@@ -135,9 +161,18 @@ namespace WeatherApp
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
                 string temp = temp_node.Attributes["value"].Value;
 
-				// Get the precipitation.
-				XmlNode precip_node2 = time_node.SelectSingleNode("precipitation");
-				string precip2 = precip_node.Attributes["type"].Value;
+                // Get the precipitation.
+                string precip2;
+                try
+                {
+                    XmlNode precip_node2 = time_node.SelectSingleNode("precipitation");
+                    precip2 = precip_node2.Attributes["type"].Value;
+                    precip2 = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(precip2);
+                }
+                catch(Exception ex)
+                {
+                    precip2 = "Clear";
+                }
 
 				ListViewItem item = lvwForecast.Items.Add(time.DayOfWeek.ToString());
                 item.SubItems.Add(time.ToShortTimeString());
