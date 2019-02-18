@@ -22,3 +22,15 @@ C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\Weather
 C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.CoreCompileInputs.cache
 C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.exe
 C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\bin\Debug\WeatherData.mdf
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\bin\Debug\WeatherData_log.ldf
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\bin\Debug\WeatherApp.exe.config
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\bin\Debug\WeatherApp.exe
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\bin\Debug\WeatherApp.pdb
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csprojAssemblyReference.cache
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.WeatherForm.resources
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.Properties.Resources.resources
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.GenerateResource.cache
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.exe
+C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb

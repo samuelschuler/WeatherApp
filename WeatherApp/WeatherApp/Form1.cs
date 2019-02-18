@@ -102,7 +102,7 @@ namespace WeatherApp
 			string id = geo_node.Attributes["geobaseid"].Value;
 
 			// Add the infromation to the database.
-			con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samuel\Downloads\WeatherApp-master\WeatherApp-master\WeatherApp\WeatherApp\WeatherData.mdf");
+			con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\emie1\Desktop\WeatherApp\WeatherApp\WeatherApp\WeatherData.mdf");
 			con.Open();
 			cmd = new SqlCommand("INSERT INTO WeatherData (City,ZipCode) Values (@City,@Zipcode)", con);
 			cmd.Parameters.AddWithValue("@City", city);
@@ -133,7 +133,7 @@ namespace WeatherApp
             }
 
 
-            // Get Weather IconID
+            // Get Current Weather IconID and Temperature
             try
             {
                 string urlweatherID = "http://openweathermap.org/img/w/@PICID@.png";
@@ -142,6 +142,12 @@ namespace WeatherApp
                 urlweatherID = urlweatherID.Replace("@PICID@", weatherID);
                 CurrentWeatherIcon.Load(urlweatherID);
                 CurrentWeatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+
+
+                XmlNode current_temp_node = xml_doc.SelectSingleNode("//temperature");
+                string currentTemp = current_temp_node.Attributes["value"].Value;
+                CurrentTempLabel.Text = currentTemp + "\'";
+
             }
             catch(Exception ex)
             {
@@ -197,5 +203,15 @@ namespace WeatherApp
                 MessageBox.Show("Unknown Error\n" + ex.Message);
             }
         }
-	}
+
+        private void lvwForecast_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
