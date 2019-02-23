@@ -37,15 +37,14 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DropDown = new System.Windows.Forms.ComboBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.City = new System.Windows.Forms.Label();
-            this.Country = new System.Windows.Forms.Label();
             this.Current_Conditions = new System.Windows.Forms.Label();
             this.CurrentWeatherIcon = new System.Windows.Forms.PictureBox();
             this.ForecastLabel = new System.Windows.Forms.Label();
             this.CurrentTempLabel = new System.Windows.Forms.Label();
             this.txtWeather = new System.Windows.Forms.Label();
+            this.txtCountry = new System.Windows.Forms.Label();
+            this.txtCity = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.CurrentWeatherIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +55,7 @@
             this.txtLocation.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtLocation.Location = new System.Drawing.Point(91, 9);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(258, 20);
+            this.txtLocation.Size = new System.Drawing.Size(272, 20);
             this.txtLocation.TabIndex = 15;
             // 
             // SubmitBtn
@@ -65,7 +64,7 @@
             this.SubmitBtn.BackColor = System.Drawing.Color.White;
             this.SubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitBtn.ForeColor = System.Drawing.Color.Black;
-            this.SubmitBtn.Location = new System.Drawing.Point(355, 8);
+            this.SubmitBtn.Location = new System.Drawing.Point(362, 8);
             this.SubmitBtn.Name = "SubmitBtn";
             this.SubmitBtn.Size = new System.Drawing.Size(75, 23);
             this.SubmitBtn.TabIndex = 16;
@@ -81,15 +80,18 @@
             this.lvwForecast.BackColor = System.Drawing.Color.CadetBlue;
             this.lvwForecast.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lvwForecast.BackgroundImage")));
             this.lvwForecast.BackgroundImageTiled = true;
+            this.lvwForecast.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvwForecast.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lvwForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvwForecast.ForeColor = System.Drawing.Color.Black;
             this.lvwForecast.Location = new System.Drawing.Point(0, 154);
             this.lvwForecast.Name = "lvwForecast";
-            this.lvwForecast.Size = new System.Drawing.Size(442, 231);
+            this.lvwForecast.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lvwForecast.Size = new System.Drawing.Size(456, 0);
             this.lvwForecast.TabIndex = 19;
             this.lvwForecast.UseCompatibleStateImageBehavior = false;
             this.lvwForecast.View = System.Windows.Forms.View.Details;
@@ -98,22 +100,22 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Day";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 125;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Time";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 91;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Temperature";
-            this.columnHeader3.Width = 100;
+            this.columnHeader3.Width = 115;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Precipitation";
-            this.columnHeader4.Width = 82;
+            this.columnHeader4.Width = 128;
             // 
             // DropDown
             // 
@@ -124,52 +126,12 @@
             this.DropDown.Size = new System.Drawing.Size(73, 21);
             this.DropDown.TabIndex = 30;
             // 
-            // txtCity
-            // 
-            this.txtCity.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtCity.Location = new System.Drawing.Point(42, 32);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(101, 20);
-            this.txtCity.TabIndex = 31;
-            // 
-            // txtCountry
-            // 
-            this.txtCountry.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtCountry.Location = new System.Drawing.Point(205, 32);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(100, 20);
-            this.txtCountry.TabIndex = 32;
-            // 
-            // City
-            // 
-            this.City.AutoSize = true;
-            this.City.BackColor = System.Drawing.Color.Transparent;
-            this.City.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.City.ForeColor = System.Drawing.Color.White;
-            this.City.Location = new System.Drawing.Point(12, 35);
-            this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(28, 13);
-            this.City.TabIndex = 33;
-            this.City.Text = "City";
-            // 
-            // Country
-            // 
-            this.Country.AutoSize = true;
-            this.Country.BackColor = System.Drawing.Color.Transparent;
-            this.Country.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Country.ForeColor = System.Drawing.Color.White;
-            this.Country.Location = new System.Drawing.Point(149, 35);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(50, 13);
-            this.Country.TabIndex = 34;
-            this.Country.Text = "Country";
-            // 
             // Current_Conditions
             // 
             this.Current_Conditions.AutoSize = true;
             this.Current_Conditions.BackColor = System.Drawing.Color.Transparent;
             this.Current_Conditions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Current_Conditions.ForeColor = System.Drawing.Color.White;
+            this.Current_Conditions.ForeColor = System.Drawing.Color.Black;
             this.Current_Conditions.Location = new System.Drawing.Point(202, 65);
             this.Current_Conditions.Name = "Current_Conditions";
             this.Current_Conditions.Size = new System.Drawing.Size(111, 13);
@@ -178,26 +140,25 @@
             // 
             // CurrentWeatherIcon
             // 
-            this.CurrentWeatherIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CurrentWeatherIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CurrentWeatherIcon.BackColor = System.Drawing.Color.Transparent;
             this.CurrentWeatherIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.CurrentWeatherIcon.Location = new System.Drawing.Point(9, 57);
+            this.CurrentWeatherIcon.Location = new System.Drawing.Point(9, -81);
             this.CurrentWeatherIcon.Margin = new System.Windows.Forms.Padding(0);
             this.CurrentWeatherIcon.Name = "CurrentWeatherIcon";
-            this.CurrentWeatherIcon.Size = new System.Drawing.Size(69, 62);
+            this.CurrentWeatherIcon.Size = new System.Drawing.Size(83, 62);
             this.CurrentWeatherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CurrentWeatherIcon.TabIndex = 37;
             this.CurrentWeatherIcon.TabStop = false;
+            this.CurrentWeatherIcon.WaitOnLoad = true;
             // 
             // ForecastLabel
             // 
             this.ForecastLabel.AutoSize = true;
             this.ForecastLabel.BackColor = System.Drawing.Color.Transparent;
             this.ForecastLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForecastLabel.ForeColor = System.Drawing.SystemColors.Info;
-            this.ForecastLabel.Location = new System.Drawing.Point(148, 131);
+            this.ForecastLabel.ForeColor = System.Drawing.Color.Black;
+            this.ForecastLabel.Location = new System.Drawing.Point(155, 131);
             this.ForecastLabel.Name = "ForecastLabel";
             this.ForecastLabel.Size = new System.Drawing.Size(132, 20);
             this.ForecastLabel.TabIndex = 38;
@@ -210,7 +171,7 @@
             this.CurrentTempLabel.BackColor = System.Drawing.Color.Transparent;
             this.CurrentTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentTempLabel.ForeColor = System.Drawing.Color.Black;
-            this.CurrentTempLabel.Location = new System.Drawing.Point(68, 82);
+            this.CurrentTempLabel.Location = new System.Drawing.Point(68, 94);
             this.CurrentTempLabel.Name = "CurrentTempLabel";
             this.CurrentTempLabel.Size = new System.Drawing.Size(39, 37);
             this.CurrentTempLabel.TabIndex = 39;
@@ -220,12 +181,42 @@
             // 
             this.txtWeather.AutoSize = true;
             this.txtWeather.BackColor = System.Drawing.Color.Transparent;
+            this.txtWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWeather.ForeColor = System.Drawing.Color.Black;
             this.txtWeather.Location = new System.Drawing.Point(202, 83);
             this.txtWeather.Name = "txtWeather";
-            this.txtWeather.Size = new System.Drawing.Size(10, 13);
+            this.txtWeather.Size = new System.Drawing.Size(11, 13);
             this.txtWeather.TabIndex = 40;
             this.txtWeather.Text = "-";
+            // 
+            // txtCountry
+            // 
+            this.txtCountry.AutoSize = true;
+            this.txtCountry.BackColor = System.Drawing.Color.Transparent;
+            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCountry.ForeColor = System.Drawing.Color.Black;
+            this.txtCountry.Location = new System.Drawing.Point(8, 76);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(0, 20);
+            this.txtCountry.TabIndex = 41;
+            // 
+            // txtCity
+            // 
+            this.txtCity.AutoSize = true;
+            this.txtCity.BackColor = System.Drawing.Color.Transparent;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.ForeColor = System.Drawing.Color.Black;
+            this.txtCity.Location = new System.Drawing.Point(8, 56);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(0, 20);
+            this.txtCity.TabIndex = 42;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 35);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(423, 10);
+            this.progressBar1.TabIndex = 43;
             // 
             // WeatherForm
             // 
@@ -235,20 +226,22 @@
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(442, 386);
+            this.ClientSize = new System.Drawing.Size(456, 61);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.txtWeather);
             this.Controls.Add(this.CurrentTempLabel);
             this.Controls.Add(this.ForecastLabel);
             this.Controls.Add(this.CurrentWeatherIcon);
             this.Controls.Add(this.Current_Conditions);
-            this.Controls.Add(this.Country);
-            this.Controls.Add(this.City);
-            this.Controls.Add(this.txtCountry);
-            this.Controls.Add(this.txtCity);
             this.Controls.Add(this.DropDown);
             this.Controls.Add(this.lvwForecast);
             this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.SubmitBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WeatherForm";
             this.Text = "Weather";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -266,16 +259,15 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ComboBox DropDown;
-		private System.Windows.Forms.TextBox txtCity;
-		private System.Windows.Forms.TextBox txtCountry;
-		private System.Windows.Forms.Label City;
-		private System.Windows.Forms.Label Country;
 		private System.Windows.Forms.Label Current_Conditions;
 		private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.PictureBox CurrentWeatherIcon;
         private System.Windows.Forms.Label ForecastLabel;
         private System.Windows.Forms.Label CurrentTempLabel;
         private System.Windows.Forms.Label txtWeather;
+        private System.Windows.Forms.Label txtCountry;
+        private System.Windows.Forms.Label txtCity;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

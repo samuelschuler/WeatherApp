@@ -1,5 +1,5 @@
 /*
-	Created By:	Samuel Schuler
+	Created By:	Samuel Schuler and Jamie Wyatt
 	Date:		2/8/2019
 	Usage:		Open
 
@@ -62,6 +62,8 @@ namespace WeatherApp
         // Gets the forcast of city/zip.
         private void btnForecast_Click(object sender, EventArgs e)
         {
+
+            
             // Makes the url for the location or zip
             string url = ForecastUrl.Replace("@LOC@", txtLocation.Text);
             url = url.Replace("@QUERY@", QueryCodes[DropDown.SelectedIndex]);
@@ -72,6 +74,8 @@ namespace WeatherApp
                 // Get the response string from the URL and error checking.
                 try
                 {
+                    this.Height = 100;
+                    this.Cursor = Cursors.WaitCursor;
                     DisplayForecast(client.DownloadString(url));
                 }
                 catch (WebException ex)
@@ -83,11 +87,14 @@ namespace WeatherApp
                     MessageBox.Show("Unknown Error\n" + ex.Message);
                 }
             }
+            this.Cursor = Cursors.Default;
         }
 
         // Display the forecast.
         private void DisplayForecast(string xml)
         {
+            progressBar1.Value = 0;
+
             // Load the response into an XML document.
             XmlDocument xml_doc = new XmlDocument();
             xml_doc.LoadXml(xml);
@@ -155,9 +162,11 @@ namespace WeatherApp
             }
 
 			lvwForecast.Items.Clear();
+            
 			char degrees = (char)176;
-			
-			// Loops through the doc and gets each time and temp.
+            ImageList list = new ImageList();
+         
+            // Loops through the doc and gets each time and temp.
             foreach (XmlNode time_node in xml_doc.SelectNodes("//time"))
             {
                 // Get the time in UTC.
@@ -166,25 +175,55 @@ namespace WeatherApp
                 // Get the temperature.
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
                 string temp = temp_node.Attributes["value"].Value;
-
-                // Get the precipitation.
+                
+                // Get the precipitation
                 string precip2;
+                string precipVal;
                 try
                 {
                     XmlNode precip_node2 = time_node.SelectSingleNode("precipitation");
                     precip2 = precip_node2.Attributes["type"].Value;
+                    precipVal = precip_node2.Attributes["value"].Value;
                     precip2 = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(precip2);
+                    precip2 += " " + precipVal + "%";
                 }
                 catch(Exception ex)
                 {
-                    precip2 = "Clear";
+                    precip2 = "Clear 0%";
                 }
 
-				ListViewItem item = lvwForecast.Items.Add(time.DayOfWeek.ToString());
+
+                //Load images
+                string imageName = "";
+            
+                try
+                {
+                    string urlweatherID2 = "http://openweathermap.org/img/w/@PICID@.png";
+                    XmlNode image_node = time_node.SelectSingleNode("symbol");
+                    string weatherID2 = image_node.Attributes["var"].Value;
+                    imageName = weatherID2;
+                    urlweatherID2 = urlweatherID2.Replace("@PICID@", weatherID2);
+                    WebClient _web = new WebClient();
+                    byte[] _data = _web.DownloadData(urlweatherID2);
+                    MemoryStream _ms = new MemoryStream(_data);
+
+                    list.Images.Add(imageName, System.Drawing.Image.FromStream(_ms));
+                    // bind listview
+                    lvwForecast.SmallImageList = list;
+                }catch(Exception ex) { }
+
+                ListViewItem item = lvwForecast.Items.Add(time.DayOfWeek.ToString());
                 item.SubItems.Add(time.ToShortTimeString());
                 item.SubItems.Add(temp + degrees);
 				item.SubItems.Add(precip2);
+                item.ImageKey = imageName;
+
+                if (progressBar1.Value + 3 < 100)
+                    progressBar1.Value += 3;
+                else progressBar1.Value = 100;
             }
+            this.Height = 425;
+
         }
 
         // Error Handling
